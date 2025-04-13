@@ -14,7 +14,6 @@
       color: #4e3e26;
       display: flex;
     }
-
     aside {
       width: 250px;
       background-color: #002855;
@@ -25,7 +24,6 @@
       padding-top: 60px;
       overflow-y: auto;
     }
-
     aside h1 {
       color: #FFC72C;
       font-size: 20px;
@@ -35,12 +33,10 @@
       top: 10px;
       width: 100%;
     }
-
     .menu-section {
       display: flex;
       flex-direction: column;
     }
-
     .menu-toggle {
       background: none;
       border: none;
@@ -55,46 +51,42 @@
       width: 100%;
       border-bottom: 1px solid #004080;
     }
-
     .menu-toggle img {
       width: 24px;
       height: 24px;
       margin-right: 10px;
     }
-
     .submenu {
       display: none;
       flex-direction: column;
     }
-
     .submenu a {
       color: #FFC72C;
       padding: 10px 40px;
       text-decoration: none;
       font-size: 15px;
       border-bottom: 1px solid #003366;
+      cursor: pointer;
     }
-
     .submenu a:hover {
       background-color: #004080;
     }
-
     main {
       margin-left: 250px;
       padding: 2rem;
       max-width: 960px;
     }
-
     section {
-      margin-bottom: 3rem;
+      display: none;
     }
-
+    section.active {
+      display: block;
+    }
     h2 {
       color: #2a8c89;
       font-size: 24px;
       margin-bottom: 1rem;
     }
-
     .tab-btn {
       background-color: #f2b705;
       color: #4e3e26;
@@ -105,13 +97,11 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-
     .tab-btn:hover {
       background-color: #e0a800;
       color: white;
       border-color: #4e3e26;
     }
-
     .video-tab {
       display: none;
     }
@@ -120,124 +110,111 @@
 <body>
   <aside>
     <h1>HPR EDI</h1>
-
     <div class="menu-section">
       <button class="menu-toggle" onclick="toggleSubmenu('menu1')">
         <img src="https://img.icons8.com/fluency/48/FFC72C/compass.png">Contenu
       </button>
       <div class="submenu" id="menu1">
-        <a href="#accueil">Accueil</a>
-        <a href="#concepts">Concepts EDI</a>
-        <a href="#pratiques">Bonnes Pratiques</a>
-        <a href="#defis">Défis</a>
-        <a href="#jeu">Jeu Interactif</a>
-        <a href="#references">Références</a>
-        <a href="#actualites">Actualités</a>
-        <a href="#apropos">À propos</a>
-        <a href="#videos">Vidéos</a>
+        <a data-target="accueil">Accueil</a>
+        <a data-target="concepts">Concepts EDI</a>
+        <a data-target="pratiques">Bonnes Pratiques</a>
+        <a data-target="defis">Défis</a>
+        <a data-target="jeu">Jeu Interactif</a>
+        <a data-target="references">Références</a>
+        <a data-target="actualites">Actualités</a>
+        <a data-target="apropos">À propos</a>
+        <a data-target="videos">Vidéos</a>
       </div>
     </div>
   </aside>
 
   <main>
     <section id="accueil">
-      <h2>Bienvenue</h2>
-      <p>Ce site éducatif vous guidera à travers les défis soulevés par l'équité, la diversité et l'inclusion (EDI). Vous découvrirez ce que sont les EDI et vous apprendrez plus sur les défis qui en sont soulevés. Vous pourrez même faire un petit quiz pour évaluer vos connaissances et vos choix dans le domaine. Profitez d’un contenu riche et interactif pour transformer vos méthodes de gestion et intégrer pleinement les valeurs d’EDI.</p>
-      <img src="dodoFAV.png" alt="Logo Dodo" style="max-width: 200px; display: block; margin: 20px auto;">
+      <h2>Accueil</h2>
+      <p>Bienvenue sur notre plateforme dédiée à l'Équité, la Diversité et l'Inclusion. Explorez nos ressources pour en apprendre davantage sur les valeurs EDI et comment les intégrer dans vos projets et votre quotidien.</p>
     </section>
 
     <section id="concepts">
       <h2>Concepts EDI</h2>
-      <p>L’Équité, la Diversité et l’Inclusion sont des piliers essentiels pour toute organisation moderne.</p>
+      <p>Les concepts EDI regroupent trois piliers fondamentaux :</p>
       <ul>
-        <li>L’équité consiste à offrir des opportunités adaptées aux besoins spécifiques de chacun.</li>
-        <li>La diversité valorise les différences culturelles, professionnelles et personnelles.</li>
-        <li>L’inclusion vise à créer un environnement où chacun se sent accepté et valorisé.</li>
+        <li><strong>Équité :</strong> Offrir à chacun ce dont il a besoin pour réussir, en tenant compte des différences.</li>
+        <li><strong>Diversité :</strong> Représenter et valoriser la pluralité des identités et des parcours.</li>
+        <li><strong>Inclusion :</strong> Créer un environnement où toutes les personnes se sentent respectées, valorisées et intégrées.</li>
       </ul>
-      <p>Ces principes, lorsqu'ils sont bien appliqués, améliorent la cohésion des équipes et optimisent la performance globale.</p>
     </section>
 
     <section id="pratiques">
       <h2>Bonnes Pratiques</h2>
-      <p>Voici quelques recommandations pour intégrer l’EDI dans vos projets :</p>
+      <p>Quelques pratiques efficaces pour favoriser l'EDI :</p>
       <ul>
-        <li>Valoriser la diversité des parcours</li>
-        <li>Sensibiliser aux biais inconscients</li>
-        <li>Structurer le processus de sélection</li>
-        <li>Diversifier les canaux de recrutement</li>
-        <li>Utiliser un langage inclusif</li>
+        <li>Utiliser un langage inclusif dans toutes les communications.</li>
+        <li>Former les équipes à reconnaître les biais inconscients.</li>
+        <li>Encourager la diversité dans les processus de recrutement.</li>
+        <li>Créer des espaces d'écoute sécuritaires et bienveillants.</li>
       </ul>
-      <p>L’application rigoureuse de ces pratiques favorise un environnement de travail harmonieux et performant.</p>
     </section>
 
     <section id="defis">
       <h2>Défis</h2>
-      <p>L’intégration de l’EDI peut rencontrer divers obstacles. Voici quelques défis et leurs solutions :</p>
+      <p>Même avec les meilleures intentions, l'application des principes EDI présente des défis :</p>
       <ul>
-        <li>Recrutement biaisé : Mettre en place un processus inclusif</li>
-        <li>Difficulté d'intégration : Prévoir un programme d’accueil structuré</li>
-        <li>Communication inefficace : Créer des espaces de dialogue</li>
-        <li>Manque de sensibilisation : Organiser des formations continues</li>
-        <li>Manque de sécurité psychologique : Établir des procédures claires de signalement</li>
+        <li>Sensibiliser l'ensemble des parties prenantes.</li>
+        <li>Assurer un engagement authentique, au-delà de la conformité.</li>
+        <li>Déconstruire des normes parfois invisibles mais discriminantes.</li>
       </ul>
     </section>
 
     <section id="jeu">
       <h2>Jeu Interactif</h2>
-      <p>Vous êtes chef de projet. Saurez-vous prendre des décisions justes, inclusives et efficaces ? Ce jeu vous plonge dans des situations réalistes pour vous sensibiliser aux principes d’EDI. Prenez vos décisions, recevez des retours, et voyez comment vos choix influencent l'équipe !</p>
+      <p>Participez à notre jeu interactif pour tester vos connaissances EDI à travers des scénarios concrets. Chaque choix aura un impact, saurez-vous faire preuve d'inclusion ?</p>
     </section>
 
     <section id="references">
       <h2>Références</h2>
-      <p>Voici quelques références bibliographiques utiles pour approfondir vos connaissances :</p>
+      <p>Lectures et sources :</p>
       <ul>
-        <li>[1] Intégration de l’EDI en gestion de projet, J. Dupont, 2020</li>
-        <li>[2] Diversité et performance, M. Tremblay, 2021</li>
+        <li>"L’Inclusion en action" – Éditions Diversité, 2021.</li>
+        <li>Charte québécoise des droits et libertés de la personne.</li>
+        <li>Ressources du Conseil canadien pour la diversité.</li>
       </ul>
     </section>
 
     <section id="actualites">
       <h2>Actualités</h2>
-      <p>Restez informé des dernières tendances et innovations en matière d’EDI. Découvrez des études de cas, interviews d’experts et articles de fond sur l’impact des initiatives EDI dans divers secteurs. Nos actualités sont mises à jour régulièrement.</p>
+      <p>Suivez les dernières nouvelles en matière de politique EDI, conférences à venir, initiatives innovantes et rapports d’impact sur la diversité en entreprise et dans la société.</p>
     </section>
 
     <section id="apropos">
       <h2>À propos</h2>
-      <p>EDI Dodo Déterminés est un projet éducatif dédié à la promotion des valeurs d’Équité, Diversité et Inclusion. Notre mission : fournir des ressources pratiques et accessibles pour faire progresser la culture EDI dans toutes les sphères de la société.</p>
+      <p>Ce site a été développé par une équipe engagée pour offrir une approche pédagogique et interactive à la sensibilisation EDI. Nous croyons que chaque pas vers l'équité transforme durablement nos milieux de vie.</p>
     </section>
 
     <section id="videos">
-      <h2>🎥 Ressources Vidéos EDI</h2>
+      <h2>Vidéos</h2>
       <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
         <button onclick="showVideo('video1')" class="tab-btn">Microagressions</button>
         <button onclick="showVideo('video2')" class="tab-btn">Pronoms</button>
       </div>
-
       <div id="video1" class="video-tab">
         <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-          <iframe src="https://www.youtube.com/embed/B4ZSGQW0UMI"
-                  title="Microagressions"
-                  style="width: 100%; max-width: 720px; height: 405px; border-radius: 12px; border: 3px solid #f2b705; background: white;"
-                  allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/B4ZSGQW0UMI" title="Microagressions" style="width: 100%; max-width: 720px; height: 405px; border-radius: 12px; border: 3px solid #f2b705; background: white;" allowfullscreen></iframe>
           <div style="max-width: 720px; background: #fff3c4; padding: 1.5rem; border-left: 6px solid #e0a800; border-radius: 8px;">
             <strong>Explication :</strong>
-            <p>Cette vidéo illustre comment les microagressions peuvent passer inaperçues mais avoir un impact significatif.</p>
+            <p>Cette vidéo illustre comment les microagressions, bien que souvent banalisées, peuvent avoir des effets négatifs durables sur les personnes visées.</p>
           </div>
         </div>
       </div>
-
       <div id="video2" class="video-tab">
         <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-          <iframe src="https://www.youtube.com/embed/Xz1cJ9vP798"
-                  title="Pronoms"
-                  style="width: 100%; max-width: 720px; height: 405px; border-radius: 12px; border: 3px solid #f2b705; background: white;"
-                  allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/Xz1cJ9vP798" title="Pronoms" style="width: 100%; max-width: 720px; height: 405px; border-radius: 12px; border: 3px solid #f2b705; background: white;" allowfullscreen></iframe>
           <div style="max-width: 720px; background: #fff3c4; padding: 1.5rem; border-left: 6px solid #e0a800; border-radius: 8px;">
             <strong>Explication :</strong>
-            <p>Utiliser les bons pronoms est essentiel pour le respect de l'identité de chacun.</p>
+            <p>Respecter les pronoms d’une personne est un acte simple mais fondamental pour reconnaître et valider son identité.</p>
           </div>
         </div>
       </div>
+    </section>
   </main>
 
   <script>
@@ -253,6 +230,25 @@
       const submenu = document.getElementById(id);
       submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
     }
+
+    // Affichage d'une seule section à la fois (navigation type "pages")
+    const menuLinks = document.querySelectorAll('.submenu a');
+    const sections = document.querySelectorAll('main section');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const target = link.getAttribute('data-target');
+        sections.forEach(section => {
+          section.classList.remove('active');
+        });
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    // Affiche la première section au chargement
+    window.addEventListener('DOMContentLoaded', () => {
+      const firstSection = document.querySelector('main section');
+      if (firstSection) firstSection.classList.add('active');
+    });
   </script>
 </body>
 </html>
